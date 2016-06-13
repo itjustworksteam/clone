@@ -8,5 +8,5 @@ json_data=open("./repoinfo").read()
 data = json.loads(json_data)
 for repo in data:
     print "Cloning repository " + repo["name"]
-    os.system(repo["scm"]+" clone https://bitbucket.org/" + repo["owner"] + "/" + repo["slug"])
+    os.system(repo["scm"]+" clone https://bitbucket.org/" + repo["owner"] + "/" + repo["slug"] + " "+repo["owner"]+"-"+repo["slug"])
 os.system("rm repoinfo");
