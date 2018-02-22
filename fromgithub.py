@@ -2,7 +2,7 @@ import json
 import os
 
 user = raw_input("Enter your username from github: ")
-os.system("curl -k -u "+ user + " https://api.github.com/users/"+user+"/repos > repoinfo")
+os.system("curl -k -u "+ user + " https://api.github.com/users/"+user+"/repos?per_page=200 > repoinfo")
 json_data = open("./repoinfo").read()
 data = json.loads(json_data)
 for repo in data:
